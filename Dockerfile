@@ -4,6 +4,7 @@ FROM node:20-alpine AS base
 FROM base AS deps
 WORKDIR /app
 COPY package.json yarn.lock* ./
+COPY apps ./apps
 RUN yarn install --frozen-lockfile
 
 # Build
