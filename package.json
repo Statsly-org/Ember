@@ -1,0 +1,17 @@
+{
+  "name": "ember-web",
+  "private": true,
+  "scripts": {
+    "dev": "npx turbo dev",
+    "build": "npx turbo build",
+    "start": "npx turbo start",
+    "lint": "npx turbo lint"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.0"
+  },
+  "packageManager": "yarn@1.22.22",
+  "workspaces": [
+    "apps/*"
+  ]
+}

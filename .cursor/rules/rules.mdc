@@ -1,0 +1,18 @@
+---
+alwaysApply: true
+---
+
+## Single Use Principle
+- Make files single-use that means files small and short rather than long files
+- Make Component files
+
+
+## Login
+- Login should only be with better-auth
+- Only Option is Discord Sign-In
+
+## Database
+- Use Postgres for database
+
+## Config
+- One global .env file
