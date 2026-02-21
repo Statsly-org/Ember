@@ -6,7 +6,7 @@ import path from 'path'
 const dbPath = process.env.DATABASE_PATH || path.join(process.cwd(), 'auth.db')
 
 export const auth = betterAuth({
-  baseURL: process.env.BETTER_AUTH_URL || 'http://localhost:3000',
+  baseURL: process.env.BETTER_AUTH_URL || (process.env.NODE_ENV === 'production' ? 'https://ember.st3ix.net' : 'http://localhost:3000'),
   secret: process.env.BETTER_AUTH_SECRET,
   database: new Database(dbPath),
   socialProviders: {
