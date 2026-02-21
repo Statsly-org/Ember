@@ -10,6 +10,8 @@ RUN yarn install --frozen-lockfile
 # Build
 FROM base AS builder
 WORKDIR /app
+ARG BETTER_AUTH_SECRET=build-placeholder-do-not-use-in-production
+ENV BETTER_AUTH_SECRET=$BETTER_AUTH_SECRET
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN yarn build
