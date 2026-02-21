@@ -67,12 +67,13 @@ export async function GET() {
     } catch {
       // ignore parse errors
     }
+    const parsed = data as { licenses?: unknown[]; data?: unknown[] }
     const licenses = Array.isArray(data)
       ? data
-      : Array.isArray(data?.licenses)
-        ? data.licenses
-        : Array.isArray(data?.data)
-          ? data.data
+      : Array.isArray(parsed?.licenses)
+        ? parsed.licenses
+        : Array.isArray(parsed?.data)
+          ? parsed.data
           : []
     return NextResponse.json({ licenses })
   } catch (err) {

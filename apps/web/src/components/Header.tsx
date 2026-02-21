@@ -42,23 +42,23 @@ export function Header() {
           <span className="logo-text">Ember Studios</span>
         </Link>
         <nav className="nav">
-          {links.map(({ href, label, external }) =>
-            href === '/dashboard' ? (
+          {links.map((link) =>
+            link.href === '/dashboard' ? (
               <DashboardLink
-                key={href}
-                href={href}
-                className={pathname === href ? 'active' : ''}
+                key={link.href}
+                href={link.href}
+                className={pathname === link.href ? 'active' : ''}
               >
-                {label}
+                {link.label}
               </DashboardLink>
             ) : (
               <Link
-                key={href}
-                href={href}
-                className={pathname === href ? 'active' : ''}
-                {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                key={link.href}
+                href={link.href}
+                className={pathname === link.href ? 'active' : ''}
+                {...('external' in link && link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               >
-                {label}
+                {link.label}
               </Link>
             )
           )}
