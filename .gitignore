@@ -29,7 +29,11 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
+# Database
+auth.db
+*.db
+*.sqlite
+*.sqlite3
 
 # OS
 .DS_Store
